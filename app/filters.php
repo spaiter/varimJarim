@@ -35,7 +35,7 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::guest('login');
+	if (Auth::guest()) return Redirect::guest('users/signin');
 });
 
 
@@ -59,6 +59,14 @@ Route::filter('guest', function()
 {
 	if (Auth::check()) return Redirect::to('/');
 });
+
+/* Admin Filter */
+
+Route::filter('admin', function()
+{
+    if (!Auth::user() || Auth::user()->role->first()->pivot->role_id !=1) return Redirect::to('/');
+});
+
 
 /*
 |--------------------------------------------------------------------------
