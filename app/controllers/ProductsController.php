@@ -9,8 +9,13 @@ class ProductsController extends BaseController {
     }
 
     public function getIndex() {
+        $products = Product::all();
+
         $categories = array();
         $difficultys = array();
+        $tags = array();
+        $images = array();
+
 
         foreach(Category::all() as $category) {
             $categories[$category->id] = $category->name;
@@ -18,12 +23,20 @@ class ProductsController extends BaseController {
         foreach(Difficulty::all() as $difficulty) {
             $difficultys[$difficulty->id] = $difficulty->name;
         }
-
+        foreach(Tag::all() as $tag) {
+            $tags[$tag->id] = $tag->name;
+        }
+        foreach($products as $product) {
+            $images[$product->id] = $product->images->first();
+        }
 
         return View::make('products.index')
-            ->with('products', Product::all())
+            ->with('products', $products)
             ->with('categories', $categories)
-            ->with('difficulty', $difficultys);
+            ->with('difficultys', $difficultys)
+            ->with('tags', $tags)
+            ->with('images', $images);
+
     }
 
     public function postCreate() {
@@ -31,6 +44,8 @@ class ProductsController extends BaseController {
 
         if ($validator->passes()) {
             $product = new Product;
+
+            $image_id = date('YmdHis').rand(10, 99);
 
             $product->category_id = Input::get('category_id');
             $product->name = Input::get('name');
@@ -43,15 +58,21 @@ class ProductsController extends BaseController {
             $product->portions = Input::get('portions');
             $product->tag_id = Input::get('tag_id');
             $product->difficulty_id = Input::get('difficulty_id');
-
-            /*
-            $image = Input::file('image');
-            $filename = date('Y-m-d-H:i:s')."-".$image->getClientOriginalName();
-            Image::make($image->getRealPath())->resize(468, 249)->save('public/img/products/'.$filename);
-            $product->image = 'img/products/'.$filename;
-            */
-
+            $product->image_id = $image_id;
             $product->save();
+
+            foreach(Input::file('images') as $key => $image) {
+                $filename = date('YmdHis')."-".$image->getClientOriginalName();
+                Image::make($image->getRealPath())->resize(640, 480)->save('public/img/products/'.$filename);
+                $imagemodel = new Images;
+                $imagemodel->title = $filename;
+                $imagemodel->product_id = $image_id;
+                $imagemodel->url = 'img/products/'.$filename;
+                $imagemodel->save();
+            }
+
+
+
 
             return Redirect::to('admin/products/index')
                 ->with('message', 'Product Created');
@@ -67,7 +88,11 @@ class ProductsController extends BaseController {
         $product = Product::find(Input::get('id'));
 
         if ($product) {
-            File::delete('public/'.$product->image);
+            foreach ($product->images as $image) {
+                File::delete('public/'.$image->url);
+                $image->delete();
+            }
+
             $product->delete();
             return Redirect::to('admin/products/index')
                 ->with('message', 'Product Deleted');
@@ -77,15 +102,47 @@ class ProductsController extends BaseController {
             ->with('message', 'Something went wrong, please try again');
     }
 
-    public function postToggleAvailability() {
-        $product = Product::find(Input::get('id'));
+    public function getView($id) {
+        $product = Product::find($id);
 
-        if ($product) {
-            $product->availability = Input::get('availability');
-            $product->save();
-            return Redirect::to('admin/products/index')->with('message', 'Product Updated');
+        $categories = array();
+        $difficultys = array();
+        $tags = array();
+
+        foreach(Category::all() as $category) {
+            $categories[$category->id] = $category->name;
+        }
+        foreach(Difficulty::all() as $difficulty) {
+            $difficultys[$difficulty->id] = $difficulty->name;
+        }
+        foreach(Tag::all() as $tag) {
+            $tags[$tag->id] = $tag->name;
         }
 
-        return Redirect::to('admin/products/index')->with('message', 'Invalid Product');
+        if ($product) {
+            return View::make('products.view')
+                ->with('product',$product)
+                ->with('categories', $categories)
+                ->with('difficultys', $difficultys)
+                ->with('tags', $tags)
+                ->with('images', $product->images);
+        }
+
+        return Redirect::to('admin/products/index')
+            ->with('message', 'Something went wrong, please try again');
     }
+
+    public function postImageDestroy() {
+        $image = Image::find(Input::get('image_id'));
+
+        if ($image) {
+            $image->delete();
+            return Redirect::to('admin/products/view/'.Input::get('product_id'))
+                ->with('message', 'Image Deleted');
+        }
+
+        return Redirect::to('admin/products/view/'.Input::get('product_id'))
+            ->with('message', 'Something went wrong, please try again');
+    }
+
 }

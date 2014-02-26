@@ -15,5 +15,6 @@ Route::get('/', array('uses'=>'StoreController@getIndex'));
 
 Route::controller('admin/categories', 'CategoriesController');
 Route::controller('admin/products', 'ProductsController');
+Route::controller('admin/images', 'ImagesController');
 Route::controller('store', 'StoreController');
 Route::controller('user', 'UserController');

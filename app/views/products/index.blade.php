@@ -13,18 +13,13 @@
 		<ul>
 			@foreach($products as $product)
 				<li>
-					{{ HTML::image($product->image, $product->title, array('width'=>'50')) }} 
-					{{ $product->title }} - 
+					{{ HTML::image($images[$product->id]->url, $images[$product->id]->name, array('width'=>'100')) }} 
+					{{ $product->name }} - 
 					{{ Form::open(array('url'=>'admin/products/destroy', 'class'=>'form-inline')) }}
 					{{ Form::hidden('id', $product->id) }}
 					{{ Form::submit('delete') }}
-					{{ Form::close() }} - 
-
-					{{ Form::open(array('url'=>'admin/products/toggle-availability', 'class'=>'form-inline'))}}
-					{{ Form::hidden('id', $product->id) }}
-					{{ Form::select('availability', array('1'=>'In Stock', '0'=>'Out of Stock'), $product->availability) }}
-					{{ Form::submit('Update') }}
 					{{ Form::close() }}
+					<a href="/admin/products/view/{{ $product->id }}">edit</a>
 				</li>
 			@endforeach
 		</ul>
@@ -81,16 +76,16 @@
 			{{ Form::text('portions', null, array('class'=>'form-portions')) }}
 		</p>
 		<p>
-			{{ Form::label('tag_id') }}
-			{{ Form::text('tag_id', null, array('class'=>'form-tag_id')) }}
+			{{ Form::label('tag_id', 'Tags') }}
+			{{ Form::select('tag_id', $tags) }}
 		</p>
 		<p>
-			{{ Form::label('difficulty_id', 'Difficulty') }}
-			{{ Form::select('difficulty_id', $difficulty) }}
+			{{ Form::label('difficulty_id', 'Difficultys') }}
+			{{ Form::select('difficulty_id', $difficultys) }}
 		</p>
 		<p>
 			{{ Form::label('images', 'Choose images') }}
-			{{ Form::file('images[]', array('multiple')) }}
+			{{ Form::file('images[]', array('multiple' => 'multiple')) }}
 		</p>
 		{{ Form::submit('Create Product', array('class'=>'btn')) }}
 		{{ Form::close() }}
