@@ -43,6 +43,26 @@ class ProductsController extends BaseController {
         $validator = Validator::make(Input::all(), Product::$rules);
 
         if ($validator->passes()) {
+            $images = Input::file('images');
+            $imagesCount = count($images);
+
+            for ($i=0; $i < $imagesCount; $i++)
+            {
+                $input = array(
+                    'upload' => $images[$i]
+                );
+                $rules = array(
+                    'upload' => 'required|image|mimes:jpeg,jpg,bmp,png,gif'
+                );
+                $validation = Validator::make($input, $rules);
+                if (!$validation->passes()) {
+                    return Redirect::to('admin/products/index')
+                        ->with('message', 'Image Validation didn\'t pass')
+                        ->withErrors($validator)
+                        ->withInput();
+                }
+            }
+
             $product = new Product;
 
             $image_id = date('YmdHis').rand(10, 99);
@@ -70,12 +90,9 @@ class ProductsController extends BaseController {
                 $imagemodel->url = 'img/products/'.$filename;
                 $imagemodel->save();
             }
-
-
-
-
             return Redirect::to('admin/products/index')
                 ->with('message', 'Product Created');
+
         }
 
         return Redirect::to('admin/products/index')

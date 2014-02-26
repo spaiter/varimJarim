@@ -24,15 +24,22 @@ class ImagesController extends BaseController {
         }
 
         return Redirect::to('admin/products/view/'.$product_id)
-            ->with('message', 'Something went wrong, please try again');
+            ->with('message', 'Image Added');
     }
 
     public function postDestroy() {
         $image = Images::find(Input::get('image_id'));
         $product_id = Input::get('product_id');
+        $productImagesCount = count(Product::find($product_id)->images);
+
+        if ($productImagesCount <= 1) {
+            return Redirect::to('admin/products/view/'.$product_id)
+                ->with('message', 'Should be one or more images');
+        }
 
         if ($image) {
             $image->delete();
+            File::delete('public/'.$image->url);
             return Redirect::to('admin/products/view/'.$product_id)
                 ->with('message', 'Image Deleted');
         }

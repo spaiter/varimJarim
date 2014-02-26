@@ -13,10 +13,13 @@
 		<ul>
 			@foreach($categories as $category)
 				<li>
-					{{ Form::open(array('url'=>'admin/categories/update', 'class'=>'form-inline')) }}
+					{{ Form::open(array('url'=>'admin/categories/update', 'files'=>true, 'class'=>'form-inline')) }}
+					{{ HTML::image($category->image, null, array('width' => '100'))}}
 					{{ Form::label('name') }}
 					{{ Form::text('name', $category->name, array('class' => 'name')); }}
 					{{ Form::text('order', $category->order, array('class' => 'order')); }}
+					{{ Form::label('image', 'Choose image') }}
+					{{ Form::file('image') }}
 					{{ Form::hidden('id', $category->id) }}
 					{{ Form::submit('update') }}
 					{{ Form::close() }}
@@ -43,10 +46,18 @@
 		</div><!-- end form-errors -->
 		@endif
 
-		{{ Form::open(array('url'=>'admin/categories/create')) }}
+		{{ Form::open(array('url'=>'admin/categories/create', 'files'=>true)) }}
 		<p>
 			{{ Form::label('name') }}
 			{{ Form::text('name') }}
+		</p>
+		<p>
+			{{ Form::label('order') }}
+			{{ Form::text('order') }}
+		</p>
+		<p>
+			{{ Form::label('image', 'Choose image') }}
+			{{ Form::file('image') }}
 		</p>
 		{{ Form::submit('Create Category', array('class'=>'btn')) }}
 		{{ Form::close() }}

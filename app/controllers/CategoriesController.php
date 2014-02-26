@@ -19,6 +19,11 @@ class CategoriesController extends BaseController {
         if ($validator->passes()) {
             $category = new Category;
             $category->name = Input::get('name');
+            $category->order = Input::get('order');
+            $image = Input::file('image');
+            $filename = date('YmdHis')."-".$image->getClientOriginalName();
+            Image::make($image->getRealPath())->resize(640, 480)->save('public/img/categories/'.$filename);
+            $category->image = 'img/categories/'.$filename;
             $category->save();
 
             return Redirect::to('admin/categories/index')
@@ -34,6 +39,12 @@ class CategoriesController extends BaseController {
     public function postDestroy() {
         $category = Category::find(Input::get('id'));
 
+        $productsCount = count($category->products);
+        if ($productsCount >= 1) {
+            return Redirect::to('admin/categories/index')
+                ->with('message', 'Category not empty');
+        }
+
         if ($category) {
             $category->delete();
             return Redirect::to('admin/categories/index')
@@ -45,12 +56,26 @@ class CategoriesController extends BaseController {
     }
 
     public function postUpdate() {
-        $category = Category::find(Input::get('id'));
+        $updatingRules = Category::$rules;
+        $updatingRules['name'] = 'required|min:3';
+        $validator = Validator::make(Input::all(), $updatingRules);
 
-        if ($category) {
-            $category->update(array('name' => Input::get('name'), 'order' => Input::get('order')));
-            return Redirect::to('admin/categories/index')
-                ->with('message', 'Category updated');
+        if ($validator->passes()) {
+            $category = Category::find(Input::get('id'));
+
+            if ($category) {
+                File::delete('public/'.$category->image);
+                $image = Input::file('image');
+                $filename = date('YmdHis')."-".$image->getClientOriginalName();
+                Image::make($image->getRealPath())->resize(640, 480)->save('public/img/categories/'.$filename);
+                $category->update(array(
+                    'name' => Input::get('name'),
+                    'order' => Input::get('order'),
+                    'image' => 'img/categories/'.$filename
+                ));
+                return Redirect::to('admin/categories/index')
+                    ->with('message', 'Category updated');
+            }
         }
 
         return Redirect::to('admin/categories/index')
