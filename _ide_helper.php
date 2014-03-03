@@ -531,6 +531,17 @@ class App extends Illuminate\Support\Facades\App{
 	 }
 
 	/**
+	 * Determine if the given service is a deferred service.
+	 *
+	 * @param string  $service
+	 * @return bool
+	 * @static 
+	 */
+	 public static function isDeferredService($service){
+		return Illuminate\Foundation\Application::isDeferredService($service);
+	 }
+
+	/**
 	 * Get or set the request class for the application.
 	 *
 	 * @param string  $class
@@ -2620,11 +2631,13 @@ class Cookie extends Illuminate\Support\Facades\Cookie{
 	 * Expire the given cookie.
 	 *
 	 * @param string  $name
+	 * @param string  $path
+	 * @param string  $domain
 	 * @return \Symfony\Component\HttpFoundation\Cookie
 	 * @static 
 	 */
-	 public static function forget($name){
-		return Illuminate\Cookie\CookieJar::forget($name);
+	 public static function forget($name, $path = null, $domain = null){
+		return Illuminate\Cookie\CookieJar::forget($name, $path, $domain);
 	 }
 
 	/**
@@ -5900,6 +5913,16 @@ class Input extends Illuminate\Support\Facades\Input{
 	 }
 
 	/**
+	 * Get the request method.
+	 *
+	 * @return string
+	 * @static 
+	 */
+	 public static function method(){
+		return Illuminate\Http\Request::method();
+	 }
+
+	/**
 	 * Get the root URL for the application.
 	 *
 	 * @return string
@@ -8554,6 +8577,16 @@ class Request extends Illuminate\Support\Facades\Request{
 	 */
 	 public static function instance(){
 		return Illuminate\Http\Request::instance();
+	 }
+
+	/**
+	 * Get the request method.
+	 *
+	 * @return string
+	 * @static 
+	 */
+	 public static function method(){
+		return Illuminate\Http\Request::method();
 	 }
 
 	/**
@@ -12143,7 +12176,7 @@ class Image extends Intervention\Image\Facades\Image{
 	 * @return Image
 	 * @static 
 	 */
-	 public static function fill($source, $pos_x = 0, $pos_y = 0){
+	 public static function fill($source, $pos_x = null, $pos_y = null){
 		return Intervention\Image\Image::fill($source, $pos_x, $pos_y);
 	 }
 
@@ -12473,6 +12506,64 @@ class Image extends Intervention\Image\Facades\Image{
 	 */
 	 public static function __toString(){
 		return Intervention\Image\Image::__toString();
+	 }
+
+}
+
+class OAuth extends Artdarek\OAuth\Facade\OAuth{
+	/**
+	 * Constructor
+	 *
+	 * @param ServiceFactory $serviceFactory - (Dependency injection) If not provided, a ServiceFactory instance will be constructed.
+	 * @static 
+	 */
+	 public static function __construct($serviceFactory = null){
+		 Artdarek\OAuth\OAuth::__construct($serviceFactory);
+	 }
+
+	/**
+	 * Detect config and set data from it
+	 *
+	 * @param string $service
+	 * @static 
+	 */
+	 public static function setConfig($service){
+		 Artdarek\OAuth\OAuth::setConfig($service);
+	 }
+
+	/**
+	 * Create storage instance
+	 *
+	 * @param string $storageName
+	 * @return OAuth\Common\\Storage
+	 * @static 
+	 */
+	 public static function createStorageInstance($storageName){
+		return Artdarek\OAuth\OAuth::createStorageInstance($storageName);
+	 }
+
+	/**
+	 * Set the http client object
+	 *
+	 * @param string $httpClientName
+	 * @return void
+	 * @static 
+	 */
+	 public static function setHttpClient($httpClientName){
+		 Artdarek\OAuth\OAuth::setHttpClient($httpClientName);
+	 }
+
+	/**
+	 * 
+	 *
+	 * @param string $service
+	 * @param string $url
+	 * @param array  $scope
+	 * @return \OAuth\Common\Service\AbstractService
+	 * @static 
+	 */
+	 public static function consumer($service, $url = null, $scope = null){
+		return Artdarek\OAuth\OAuth::consumer($service, $url, $scope);
 	 }
 
 }
