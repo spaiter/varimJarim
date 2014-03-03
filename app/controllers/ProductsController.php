@@ -31,7 +31,7 @@ class ProductsController extends BaseController {
         }
 
         return View::make('products.index')
-            ->with('products', $products)
+            ->with('products', $products->sortBy('order'))
             ->with('categories', $categories)
             ->with('difficultys', $difficultys)
             ->with('tags', $tags)
@@ -101,6 +101,39 @@ class ProductsController extends BaseController {
             ->withInput();
     }
 
+    public function postUpdate() {
+
+        $validator = Validator::make(Input::all(), Product::$rules);
+        $id = Input::get('id');
+
+        if ($validator->passes()) {
+            $product = Product::find($id);
+
+            if ($product) {
+
+                $product->update(array(
+                    'category_id' => Input::get('category_id'),
+                    'name' => Input::get('name'),
+                    'price' => Input::get('price'),
+                    'weight' => Input::get('weight'),
+                    'cooking_time' => Input::get('cooking_time'),
+                    'description' => Input::get('description'),
+                    'full_text' => Input::get('full_text'),
+                    'min_order' => Input::get('min_order'),
+                    'portions' => Input::get('portions'),
+                    'order' => Input::get('order'),
+                    'tag_id' => Input::get('tag_id'),
+                    'difficulty_id' => Input::get('difficulty_id')
+                ));
+                return Redirect::to('admin/products/view/'.$id)
+                    ->with('message', 'Category updated');
+            }
+        }
+
+        return Redirect::to('admin/products/view/'.$id)
+            ->with('message', 'Something went wrong, please try again');
+    }
+
     public function postDestroy() {
         $product = Product::find(Input::get('id'));
 
@@ -113,6 +146,22 @@ class ProductsController extends BaseController {
             $product->delete();
             return Redirect::to('admin/products/index')
                 ->with('message', 'Product Deleted');
+        }
+
+        return Redirect::to('admin/products/index')
+            ->with('message', 'Something went wrong, please try again');
+    }
+
+    public function postChangeorder() {
+
+        $product = Product::find(Input::get('id'));
+
+        if ($product) {
+            $product->update(array(
+                'order' => Input::get('order')
+            ));
+            return Redirect::to('admin/products/index')
+                ->with('message', 'Product order updated');
         }
 
         return Redirect::to('admin/products/index')

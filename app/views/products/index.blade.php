@@ -19,6 +19,12 @@
 					{{ Form::hidden('id', $product->id) }}
 					{{ Form::submit('delete') }}
 					{{ Form::close() }}
+					{{ Form::open(array('url'=>'admin/products/changeorder', 'class'=>'form-inline')) }}
+					{{ Form::label('order') }}
+					{{ Form::text('order', $product->order, array('class'=>'form-order')) }}
+					{{ Form::hidden('id', $product->id) }}
+					{{ Form::submit('change order') }}
+					{{ Form::close() }}
 					<a href="/admin/products/view/{{ $product->id }}">edit</a>
 				</li>
 			@endforeach

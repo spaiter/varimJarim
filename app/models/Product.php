@@ -14,6 +14,7 @@ class Product extends Eloquent {
         'full_text',
         'min_order',
         'portions',
+        'order',
         'tag_id',
         'difficulty_id'
     );
@@ -28,6 +29,7 @@ class Product extends Eloquent {
         'full_text'         =>  'required|min:20',
         'min_order'         =>  'required|integer',
         'portions'          =>  'required|integer',
+        'order'             =>  'integer',
         'tag_id'            =>  'integer',
         'difficulty_id'     =>  'integer'
 

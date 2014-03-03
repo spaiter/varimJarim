@@ -5,7 +5,7 @@
 	<div id="admin">
 
 
-		{{ Form::open(array('url'=>'admin/products/create', 'files'=>true)) }}
+		{{ Form::open(array('url'=>'admin/products/update', 'files'=>true)) }}
 		<p>
 			{{ Form::label('category_id', 'Category') }}
 			{{ Form::select('category_id', $categories, $product->category_id) }}
@@ -51,6 +51,11 @@
 			{{ Form::select('difficulty_id', $difficultys, $product->difficulty_id) }}
 		</p>
 		<p>
+			{{ Form::label('order') }}
+			{{ Form::text('order', $product->order, array('class'=>'form-order')) }}
+		</p>
+		<p>
+			{{ Form::hidden('id', $product->id) }}
 			{{ Form::submit('Update Product', array('class'=>'btn')) }}
 		{{ Form::close() }}
 		</p>
