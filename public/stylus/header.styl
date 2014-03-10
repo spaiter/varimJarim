@@ -1,0 +1,257 @@
+@import 'vars.styl'
+
+.logo
+  display block
+  font-size 245px
+  margin-top -135px
+  margin-bottom 85px
+  color $red
+
+.phone-block
+  color $headerGray
+  .phone
+    display block
+    float left
+    font-size 30px
+  .number
+    display block
+    float left
+    font-size 25px
+
+.social-block
+  span
+    cursor pointer
+    display block
+    float left
+    font-size 30px
+    margin-right 23px
+  .flat
+    font-size 60px
+    line-height 0
+
+.intro-text
+  font-size 21px
+  line-height 30px
+  margin-bottom 40px
+
+.feature-block
+  margin-bottom 55px
+  div
+    margin-right 40px
+    float left
+  span
+    display block
+    color $red
+    font-size 19px
+    font-weight 400
+    &.icon
+      font-size 34px
+      margin-bottom 5px
+      &.flat
+        margin-top -34px
+        font-size 68px
+
+.menu
+  width 100%
+  a
+    cursor pointer
+    text-align center
+    li
+      span
+        background $menuGrayBg
+        color $darkGrayLine
+        text-transform uppercase
+        font-weight 700
+    &:last-child
+      margin-right 0
+    &.active
+      li
+        span
+          background $red
+          color $white
+
+.header-image-wrapper {
+  position: absolute;
+  right: -30px;
+  top: -45px;
+  z-index: -1;
+}
+
+@media (max-width: 1000px) {
+  .order-wrapper {
+    position: absolute;
+  }
+}
+@media (min-width: 1000px) {
+  .order-wrapper {
+    position: fixed;
+  }
+}
+.order-wrapper
+  display none
+  //position: fixed;
+  top: 0px;
+  right: 369px;
+  width 470px
+  background $red
+  text-align center
+  border-bottom 3px solid rgba-ie(#000, 0.6)
+  z-index 10
+  .order-button-wrapper
+    display none
+    padding 16px 0
+    cursor pointer
+    span
+      text-transform uppercase
+      font-size 16px
+      font-weight bold
+      color $white
+
+  .order-body-wrapper
+    text-align left
+    background $red
+    margin 0 10px
+    border-top 1px dashed $white
+    padding 15px 0 10px 0
+    color $white
+    display none
+    .order-list-wrapper {
+      dl {
+        width: 450px;
+        font-size: 0;
+        line-height: 0;
+        letter-spacing: -1px;
+        margin-bottom 0
+      }
+      dt {
+        display: inline-block;
+        zoom: 1;
+        width: 225px;
+        background: url(../img/dotted.gif) 0 bottom repeat-x;
+        margin-bottom: 23px;
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: normal;
+      }
+      dt span,
+      dd span {
+        background: $red;
+      }
+      dd{
+        display: inline-block;
+        zoom: 1;
+        text-align: right;
+        width: 200px;
+        background: url(../img/dotted.gif) 6px bottom repeat-x;
+        margin-bottom: 23px;
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: normal;
+        .count {
+          padding-left 2px
+        }
+        &.remove {
+          margin-left: 3px;
+          line-height: 17px;
+          width: 20px;
+          height: 20px;
+          background: none;
+          border: 1px solid white;
+          padding: 0px 5px;
+          border-radius: 50%;
+          cursor pointer
+        }
+      }
+    }
+    .in-total-wrapper {
+      dl {
+        width: 450px;
+        font-size: 0;
+        line-height: 0;
+        letter-spacing: -1px;
+        margin-bottom 0
+      }
+      dt {
+        display: inline-block;
+        zoom: 1;
+        width: 225px;
+        background: url(../img/dotted-big.gif) 0 bottom repeat-x;
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight bold
+        line-height: normal;
+        letter-spacing: normal;
+      }
+      dt span,
+      dd span {
+        background: $red;
+        font-weight bold
+      }
+      dd {
+        display: inline-block;
+        zoom: 1;
+        text-align: right;
+        width: 225px;
+        background: url(../img/dotted-big.gif) 6px bottom repeat-x;
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight bold
+        line-height: normal;
+        letter-spacing: normal;
+        .count {
+          padding-left 2px
+        }
+      }
+    }
+
+    .order-form-wrapper {
+      margin-top 15px
+      .padding-left {
+       padding-left 13px
+      }
+        .full-width {
+          width 100%
+        }
+      label {
+        font-weight 300
+        width 100%
+      }
+        input {
+          width 212px
+          height 48px
+          border 1px solid $white
+          background none
+          color $white
+          padding 10px 10px
+          margin-bottom 15px
+          &.button {
+            margin-top 5px
+            font-weight bold
+            text-transform uppercase
+            color $red
+            background $white
+            width 168px
+            margin-bottom 0
+          }
+        }
+        input[name=date] {
+          position relative
+          z-index 2
+        }
+      .icon-calendarpick {
+        position: absolute;
+        top: 34px;
+        left: 190px;
+        font-size: 25px;
+        cursor pointer
+        z-index 1
+      }
+    }
+  .thanksForOrder {
+    display none
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    float: left;
+    line-height: 24px;
+  }

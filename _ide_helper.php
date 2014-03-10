@@ -12568,3 +12568,168 @@ class OAuth extends Artdarek\OAuth\Facade\OAuth{
 
 }
 
+class Cart extends Moltin\Cart\Facade{
+	/**
+	 * Cart constructor
+	 *
+	 * @param StorageInterface    $store      The interface for storing the cart data
+	 * @param IdentifierInterface $identifier The interface for storing the identifier
+	 * @static 
+	 */
+	 public static function __construct($store, $identifier){
+		 Moltin\Cart\Cart::__construct($store, $identifier);
+	 }
+
+	/**
+	 * Retrieve the cart contents
+	 *
+	 * @return array An array of Item objects
+	 * @static 
+	 */
+	 public static function contents($asArray = false){
+		return Moltin\Cart\Cart::contents($asArray);
+	 }
+
+	/**
+	 * Insert an item into the cart
+	 *
+	 * @param array  $item An array of item data
+	 * @return string       A unique item identifier
+	 * @static 
+	 */
+	 public static function insert($item){
+		return Moltin\Cart\Cart::insert($item);
+	 }
+
+	/**
+	 * Update an item
+	 *
+	 * @param string $itemIdentifier The unique item identifier
+	 * @param string|int|array $key  The key to update, or an array of key-value pairs
+	 * @param mixed $value           The value to set $key to
+	 * @return void
+	 * @static 
+	 */
+	 public static function update($itemIdentifier, $key, $value = null){
+		 Moltin\Cart\Cart::update($itemIdentifier, $key, $value);
+	 }
+
+	/**
+	 * Remove an item from the cart
+	 *
+	 * @param string $identifier Unique item identifier
+	 * @return void
+	 * @static 
+	 */
+	 public static function remove($identifier){
+		 Moltin\Cart\Cart::remove($identifier);
+	 }
+
+	/**
+	 * Destroy/empty the cart
+	 *
+	 * @return void
+	 * @static 
+	 */
+	 public static function destroy(){
+		 Moltin\Cart\Cart::destroy();
+	 }
+
+	/**
+	 * Check if the cart has a specific item
+	 *
+	 * @param string  $itemIdentifier The unique item identifier
+	 * @return boolean                 Yes or no?
+	 * @static 
+	 */
+	 public static function has($itemIdentifier){
+		return Moltin\Cart\Cart::has($itemIdentifier);
+	 }
+
+	/**
+	 * Return a specific item object by identifier
+	 *
+	 * @param string $itemIdentifier The unique item identifier
+	 * @return Item                   Item object
+	 * @static 
+	 */
+	 public static function item($itemIdentifier){
+		return Moltin\Cart\Cart::item($itemIdentifier);
+	 }
+
+	/**
+	 * Returns the first occurance of an item with a given id
+	 *
+	 * @param string $id The item id
+	 * @return Item       Item object
+	 * @static 
+	 */
+	 public static function find($id){
+		return Moltin\Cart\Cart::find($id);
+	 }
+
+	/**
+	 * The total tax value for the cart
+	 *
+	 * @return float The total tax value
+	 * @static 
+	 */
+	 public static function tax(){
+		return Moltin\Cart\Cart::tax();
+	 }
+
+	/**
+	 * The total value of the cart
+	 *
+	 * @param boolean $includeTax Include tax on the total?
+	 * @return float               The total cart value
+	 * @static 
+	 */
+	 public static function total($includeTax = true){
+		return Moltin\Cart\Cart::total($includeTax);
+	 }
+
+	/**
+	 * The total number of items in the cart
+	 *
+	 * @param boolean $unique Just return unique items?
+	 * @return int             Total number of items
+	 * @static 
+	 */
+	 public static function totalItems($unique = false){
+		return Moltin\Cart\Cart::totalItems($unique);
+	 }
+
+	/**
+	 * Set the currency object
+	 *
+	 * @param \Moltin\Currency\Currency $currency The currency object
+	 * @static 
+	 */
+	 public static function setCurrency($currency){
+		 Moltin\Cart\Cart::setCurrency($currency);
+	 }
+
+	/**
+	 * Get the currency object
+	 *
+	 * @return Currency The currency object for this cart
+	 * @static 
+	 */
+	 public static function currency(){
+		return Moltin\Cart\Cart::currency();
+	 }
+
+	/**
+	 * Set the cart identifier, useful if restoring a saved cart
+	 *
+	 * @param mixed The identifier
+	 * @return void
+	 * @static 
+	 */
+	 public static function setIdentifier($identifier){
+		 Moltin\Cart\Cart::setIdentifier($identifier);
+	 }
+
+}
+

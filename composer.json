@@ -5,11 +5,12 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-		"way/generators": "1.0.*@dev",
+		"way/generators": "dev-master",
         "barryvdh/laravel-ide-helper": "dev-master",
         "intervention/image": "dev-master",
         "barryvdh/laravel-debugbar": "1.*",
-        "artdarek/oauth-4-laravel": "dev-master"
+        "artdarek/oauth-4-laravel": "dev-master",
+        "moltin/laravel-cart": "dev-master"
 
 	},
 	"autoload": {

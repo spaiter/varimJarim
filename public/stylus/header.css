@@ -1,0 +1,258 @@
+.logo {
+  display: block;
+  font-size: 245px;
+  margin-top: -135px;
+  margin-bottom: 85px;
+  color: #ee4036;
+}
+.phone-block {
+  color: #58595b;
+}
+.phone-block .phone {
+  display: block;
+  float: left;
+  font-size: 30px;
+}
+.phone-block .number {
+  display: block;
+  float: left;
+  font-size: 25px;
+}
+.social-block span {
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 30px;
+  margin-right: 23px;
+}
+.social-block .flat {
+  font-size: 60px;
+  line-height: 0;
+}
+.intro-text {
+  font-size: 21px;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+.feature-block {
+  margin-bottom: 55px;
+}
+.feature-block div {
+  margin-right: 40px;
+  float: left;
+}
+.feature-block span {
+  display: block;
+  color: #ee4036;
+  font-size: 19px;
+  font-weight: 400;
+}
+.feature-block span.icon {
+  font-size: 34px;
+  margin-bottom: 5px;
+}
+.feature-block span.icon.flat {
+  margin-top: -34px;
+  font-size: 68px;
+}
+.menu {
+  width: 100%;
+}
+.menu a {
+  cursor: pointer;
+  text-align: center;
+}
+.menu a li span {
+  background: #d0d2d3;
+  color: #231f20;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.menu a:last-child {
+  margin-right: 0;
+}
+.menu a.active li span {
+  background: #ee4036;
+  color: #fff;
+}
+.header-image-wrapper {
+  position: absolute;
+  right: -30px;
+  top: -45px;
+  z-index: -1;
+}
+@media (max-width: 1000px) {
+  .order-wrapper {
+    position: absolute;
+  }
+}
+@media (min-width: 1000px) {
+  .order-wrapper {
+    position: fixed;
+  }
+}
+.order-wrapper {
+  display: none;
+  top: 0px;
+  right: 369px;
+  width: 470px;
+  background: #ee4036;
+  text-align: center;
+  border-bottom: 3px solid rgba-ie(#000, 0.6);
+  z-index: 10;
+}
+.order-wrapper .order-button-wrapper {
+  display: none;
+  padding: 16px 0;
+  cursor: pointer;
+}
+.order-wrapper .order-button-wrapper span {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+.order-wrapper .order-body-wrapper {
+  text-align: left;
+  background: #ee4036;
+  margin: 0 10px;
+  border-top: 1px dashed #fff;
+  padding: 15px 0 10px 0;
+  color: #fff;
+  display: none;
+}
+.order-wrapper .order-body-wrapper .order-list-wrapper dl {
+  width: 450px;
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+}
+.order-wrapper .order-body-wrapper .order-list-wrapper dt {
+  display: inline-block;
+  zoom: 1;
+  width: 225px;
+  background: url("../img/dotted.gif") 0 bottom repeat-x;
+  margin-bottom: 23px;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.order-wrapper .order-body-wrapper .order-list-wrapper dt span,
+.order-wrapper .order-body-wrapper .order-list-wrapper dd span {
+  background: #ee4036;
+}
+.order-wrapper .order-body-wrapper .order-list-wrapper dd {
+  display: inline-block;
+  zoom: 1;
+  text-align: right;
+  width: 200px;
+  background: url("../img/dotted.gif") 6px bottom repeat-x;
+  margin-bottom: 23px;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.order-wrapper .order-body-wrapper .order-list-wrapper dd .count {
+  padding-left: 2px;
+}
+.order-wrapper .order-body-wrapper .order-list-wrapper dd.remove {
+  margin-left: 3px;
+  line-height: 17px;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: 1px solid #fff;
+  padding: 0px 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.order-wrapper .order-body-wrapper .in-total-wrapper dl {
+  width: 450px;
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+}
+.order-wrapper .order-body-wrapper .in-total-wrapper dt {
+  display: inline-block;
+  zoom: 1;
+  width: 225px;
+  background: url("../img/dotted-big.gif") 0 bottom repeat-x;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.order-wrapper .order-body-wrapper .in-total-wrapper dt span,
+.order-wrapper .order-body-wrapper .in-total-wrapper dd span {
+  background: #ee4036;
+  font-weight: bold;
+}
+.order-wrapper .order-body-wrapper .in-total-wrapper dd {
+  display: inline-block;
+  zoom: 1;
+  text-align: right;
+  width: 225px;
+  background: url("../img/dotted-big.gif") 6px bottom repeat-x;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.order-wrapper .order-body-wrapper .in-total-wrapper dd .count {
+  padding-left: 2px;
+}
+.order-wrapper .order-body-wrapper .order-form-wrapper {
+  margin-top: 15px;
+}
+.order-wrapper .order-body-wrapper .order-form-wrapper .padding-left {
+  padding-left: 13px;
+}
+.order-wrapper .order-body-wrapper .order-form-wrapper .full-width {
+  width: 100%;
+}
+.order-wrapper .order-body-wrapper .order-form-wrapper label {
+  font-weight: 300;
+  width: 100%;
+}
+.order-wrapper .order-body-wrapper .order-form-wrapper input {
+  width: 212px;
+  height: 48px;
+  border: 1px solid #fff;
+  background: none;
+  color: #fff;
+  padding: 10px 10px;
+  margin-bottom: 15px;
+}
+.order-wrapper .order-body-wrapper .order-form-wrapper input.button {
+  margin-top: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ee4036;
+  background: #fff;
+  width: 168px;
+  margin-bottom: 0;
+}
+.order-wrapper .order-body-wrapper .order-form-wrapper input[name=date] {
+  position: relative;
+  z-index: 2;
+}
+.order-wrapper .order-body-wrapper .order-form-wrapper .icon-calendarpick {
+  position: absolute;
+  top: 34px;
+  left: 190px;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 1;
+}
+.order-wrapper .thanksForOrder {
+  display: none;
+  margin-left: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  float: left;
+  line-height: 24px;
+}

@@ -1,54 +1,69 @@
-@extends('layouts.main')
-
-@section('promo')
-
-	<section id="promo">
-        <div id="promo-details">
-            <h1>Today's Deals</h1>
-            <p>Checkout this section of<br />
-             products at a discounted price.</p>
-            <a href="#" class="default-btn">Shop Now</a>
-        </div><!-- end promo-details -->
-        {{ HTML::image('img/promo.png', 'Promotional Ad')}}
-    </section><!-- promo -->
-
-@stop
+@extends('layouts.shop')
 
 @section('content')
 
-	<h2>New Products</h2>
-    <hr>
-    <div id="products">
-    	@foreach($products as $product)
-        <div class="product">
-            <a href="/store/view/{{ $product->id }}">
-            	{{ HTML::image($product->image, $product->title, array('class'=>'feature', 'width'=>'240', 'height'=>'127')) }}
-            </a>
+		@foreach($products[$category->id] as $product)
+			<div class="container product">
+			{{ Form::open(array('method' => 'POST', 'route' => 'product.addtocart', 'class'=>'ajax' )) }}
+		    <div class="row">
+		        <div class="col-md-6 col-md-offset-1 pL pR">
+		            <div class="row">
+		                <div class="col-xs-12">
+		                    <h1 class="item-name">
+		                        {{ $product->name }}
+		                        {{ Form::hidden('id', $product->id) }}
+		                    </h1>
+		                </div>
+		            </div>
+		            <div class="row property">
+		                <div class="weight-block">
+		                    <span class="icon-weight icon"></span>
+		                    <span>{{ $product->weight }} г</span>
+		                </div>
+		                <div class="clock-block icon">
+		                    <span class="icon-clock icon"></span>
+		                    <span>{{ $product->cooking_time }} мин</span>
+		                </div>
+		                <div class="complexity-block">
+			                @for ($j = 0; $j < $difficulty[$product->id]->stars; $j++)
+							    <span class="icon-star-full icon"></span>
+							@endfor
+							@for ($j; $j < 3; $j++)
+							    <span class="icon-star-empty icon"></span>
+							@endfor
+		                    <span>{{ $difficulty[$product->id]->name }}</span>
+		                </div>
+		            </div>
+		            <div class="row description">
+		                <p>
+		                    {{ $product->description }}
+		                </p>
+		            </div>
+		            <div class="row amount-and-price">
+		                <div class="price-count">
+		                    <div class="price-wrapper"><span class="price-for-one">{{ $product->price }}</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+		                    <select name="amount">
+		                    	@for ($i=$product->portions; $i < 9; $i=$i+$product->portions)
+							    	<option value="{{ $i }}" <?php if ($i==$product->portions) {echo "selected=\"selected\"";} ?>>{{ $i }}</option>
+								@endfor
+		                    </select>
+		                    <div class="total-price-wrapper"> = <span class="total-price">258</span>Р</div>
+		                </div>
+		                {{ Form::submit('в корзину', array('class' => 'btn add-to-cart')); }}
+		            </div>
+		        </div>
+		        <div class="col-md-5 pL image-part">
+		            <div class="image-wrapper">
+		                {{ HTML::image($images[$product->id]->url, $images[$product->id]->title, array('width'=>'450')) }}
+		            </div>
 
-            <h3><a href="/store/view/{{ $product->id }}">{{ $product->title }}</a></h3>
-
-            <p>{{ $product->description }}</p>
-
-            <h5>
-            	Availability: 
-            	<span class="{{ Availability::displayClass($product->availability) }}">
-            		{{ Availability::display($product->availability) }}
-            	</span>
-            </h5>
-
-            <p>
-                {{ Form::open(array('url'=>'store/addtocart')) }}
-                {{ Form::hidden('quantity', 1) }}
-                {{ Form::hidden('id', $product->id) }}
-                <button type="submit" class="cart-btn">
-                    <span class="price">{{ $product->price }}</span> 
-                    {{ HTML::image('img/white-cart.gif', 'Add to Cart') }} 
-                    ADD TO CART
-                </button>
-                {{ Form::close() }}
-            </p>
-        </div>
-        @endforeach
-    </div><!-- end products -->
+		        </div>
+		    </div>
+		    {{ Form::close() }}
+		</div>
+		<div class="container">
+		    <div class="line dashed"></div>
+		</div>
+	@endforeach
 
 @stop

@@ -1,0 +1,1332 @@
+<div class="bxslider">
+
+<!-- супы -->
+<div class="slide">
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Итальянский суп
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>860 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>20 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Яркий и необычайно легкий овощной суп из самого сердца <br />
+                    солнечной Италии. Вкус приятно удивит вас!
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">129</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="2" selected="selected">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">258</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/soup/it.jpg" alt="Итальянский суп"/>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Солянка с оливками
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>1510 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>35 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Известный густой русский суп. Наваристый мясной бульон,<br />
+                    отличное мясо, насыщенный вкус — что может быть лучше.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">169</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="2" selected="selected">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">338</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/soup/solyanka.jpg" alt="Солянка с оливками"/>
+            </div>
+            <div class="recipe-of-day-wrapper">
+                рецепт дня!
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Луковый суп
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>590 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>50 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Самый знаменитый густой ароматный французский суп.
+                    Очень просто и очень вкусно!
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">139</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="2" selected="selected">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">278</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/soup/onion.jpg" alt="Луковый суп"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Борщ с чесноком и зеленью
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>1380 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>40 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>не сложно</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Борщ — украинский суп, который считают русским во всем мире,<br />
+                    кроме Украины. Густой, наваристый и ароматный.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">109</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="2" selected="selected">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">218</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/soup/borsh.jpg" alt="Борщ с чесноком и зеленью"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product" style="margin-bottom:250px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Уха из трех рыб
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>400 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>25 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Готовый бульон + семга + треска + форель = отличная уха. И главное — очень быстро.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">169</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="2" selected="selected">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">338</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/soup/uha.jpg" alt="Уха из трех рыб"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+
+<!-- мясо -->
+<div class="slide">
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Говядина в луково-апельсиновом соусе
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>910 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>30 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Только качественное мясо, и утонченный кисло-сладкий гарнир. Игра вкусов порадует вас.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">189</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="2" selected="selected">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">378</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/meat/beef_orange.jpg" alt="Говядина в луково–апельсиновом соусе"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Свинина в кисло-сладком соусе
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>390 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>30 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Очень простое в приготовлении оригинальное блюдо китайской кухни.                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">119</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="2" selected="selected">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">238</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/meat/pork_ch.jpg" alt="Свинина в кисло-сладком соусе"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Стейк из говядины <br />со спаржей и сельдереем
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>370 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>35 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>не сложно</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Что может быть лучше сочного горячего стейка из свежей<br />
+                    говядины? Только лишь осознание того, что этот стейк ты<br />
+                    приготовил сам! Теперь у Вас есть возможность покорить эту<br />
+                    кулинарную веху без особых усилий. Так зачем терять время?!
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">259</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">259</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="img/IMG_9239_label.jpg" alt=""/>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Свиная корейка с овощным рататуем
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>610 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>30 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>не сложно</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Свиная корейка, морковь, цуккини, болгарский перец и лук — отличное сочетание!
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">229</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">229</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="img/IMG_9283_label.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Свиное филе в беконе <br />с молодой морковкой
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>410 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>30 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>не сложно</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Сочные медальоны из вырезки, аккуратно обернутые в бекон,
+                    хрустящая морковка и молодой зеленый горошек! Ресторанное блюдо у Вас дома.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">229</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">229</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="img/IMG_9269_label.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Телятина «пять перцев» <br />с тыквой
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>620 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>30 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>не сложно</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Нежная телятина. Необычный своей простотой и тонким вкусом гарнир. Это блюдо для гурманов.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">269</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">269</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="img/IMG_9314_label.jpg" alt=""/>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product" style="margin-bottom:350px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Колбаски по-домашнему
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>291 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>10 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Колбаски бывают разные. Наши — только из настоящего мяса. Если Вы, конечно, любите все настоящее.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">189</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">189</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="img/IMG_9422_label.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- рыба -->
+<div class="slide">
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Си басс с пюре из сельдерея
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>700 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>35 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>не сложно</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Свежая средиземноморская рыба и нежное пюре из корня сельдерея прекрасно дополняют друг друга.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">239</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">239</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/fish/seabass_sel.jpg" alt="Си басс с пюре из сельдерея"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Дорада со спаржей и стручковым горошком
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>470 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>35 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Вкус свежести и лета. Дорада с ярким гарниром из зеленой спаржи и молодого горошка.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">259</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">259</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/fish/dorada_sparzha.jpg" alt="Дорада со спаржей и стручковым горошком"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Стейк из семги с молодой морковкой
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>420 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>30 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Сочное и очень нежное мясо норвежской семги, хрустящая морковка и молодой зеленый горошек!
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">259</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">259</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/fish/semga.jpg" alt="Стейк из семги с молодой морковкой"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product" style="margin-bottom:350px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Форель, запеченная с овощами
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>390 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>60 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>не сложно</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Речная форель, запеченная в фольге, и овощи — диетическое блюдо и прекрасный семейный ужин!
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">189</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="1" selected="selected">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">189</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/fish/forel.jpg" alt="Форель, запеченная с овощами"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+<!-- паста -->
+<div class="slide">
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Пенне арабьята
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>710 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>15 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Классика итальянской кухни: настоящая итальянская паста из твердых сортов пшеницы и насыщенный томатный соус!
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">119</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="2" selected="selected">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">238</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/pasta/penne_ar.jpg" alt="Пенне арабьята"/>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Пенне Болоньезе
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>740 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>30 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Отличная говядина, томаты и пенне: изысканный баланс вкусов родом из Италии. В наших рецептах только итальянская паста из твердых сортов пшеницы.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">139</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="2" selected="selected">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">278</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/pasta/penne_bol.jpg" alt="Пенне Болоньезе"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Спагетти карбонара
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>660 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>20 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Карбонара, пожалуй, самый знаменитый итальянский соус к пасте. Ароматный бекон, сыр, сливки — божественно! Особенно божественны спагетти из твердых сортов пшеницы, сделанные в Италии.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">139</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="2" selected="selected">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">278</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/pasta/spagetti-karbonara.jpg" alt="Спагетти карабонара"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="line dashed"></div>
+</div>
+
+<div class="container product" style="margin-bottom:380px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1 pL pR">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="item-name">
+                        Троттоле с рикоттой и шпинатом
+                    </h1>
+                </div>
+            </div>
+            <div class="row property">
+                <div class="weight-block">
+                    <span class="icon-weight icon"></span>
+                    <span>810 г</span>
+                </div>
+                <div class="clock-block icon">
+                    <span class="icon-clock icon"></span>
+                    <span>20 мин</span>
+                </div>
+                <div class="complexity-block">
+                    <span class="icon-star-full icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span class="icon-star-empty icon"></span>
+                    <span>очень просто</span>
+                </div>
+            </div>
+            <div class="row description">
+                <p>
+                    Вяленые под итальянским солнцем помидоры, легкий сыр рикотта,
+                    паста и свежий шпинат. Дорого, изысканно. Для тех, кто понимает.
+                </p>
+            </div>
+            <div class="row amount-and-price">
+                <div class="price-count">
+                    <div class="price-wrapper"><span class="price-for-one">269</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                    <select>
+                        <option value="2" selected="selected">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                    <div class="total-price-wrapper"> = <span class="total-price">538</span>Р</div>
+                </div>
+                <div class="btn add-to-cart">в корзину</div>
+            </div>
+        </div>
+        <div class="col-md-5 pL image-part">
+            <div class="image-wrapper">
+                <img src="/img/pasta/trottole_rik.jpg" alt="Троттоле с рикоттой и шпинатом"/>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- закуски -->
+<div class="slide">
+    <div class="container product">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-1 pL pR">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1 class="item-name">
+                            Дольки в шоколаде
+                        </h1>
+                    </div>
+                </div>
+                <div class="row property">
+                    <div class="weight-block">
+                        <span class="icon-weight icon"></span>
+                        <span>700 г</span>
+                    </div>
+                    <div class="clock-block icon">
+                        <span class="icon-clock icon"></span>
+                        <span>15 мин</span>
+                    </div>
+                    <div class="complexity-block">
+                        <span class="icon-star-full icon"></span>
+                        <span class="icon-star-empty icon"></span>
+                        <span class="icon-star-empty icon"></span>
+                        <span>очень просто</span>
+                    </div>
+                </div>
+                <div class="row description">
+                    <p>
+                        Контраст вкусов и игра цвета! Яркий, сочно и очень сладко :)
+                    </p>
+                </div>
+                <div class="row amount-and-price">
+                    <div class="price-count">
+                        <div class="price-wrapper"><span class="price-for-one">259</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                        <select>
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <div class="total-price-wrapper"> = <span class="total-price">259</span>Р</div>
+                    </div>
+                    <div class="btn add-to-cart">в корзину</div>
+                </div>
+            </div>
+            <div class="col-md-5 pL image-part">
+                <div class="image-wrapper">
+                    <img src="/img/snacks/slices.jpg" alt="Дольки в шоколаде"/>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container product">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-1 pL pR">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1 class="item-name">
+                            Сладкие тосты<br/>I LOVE YOU
+                        </h1>
+                    </div>
+                </div>
+                <div class="row property">
+                    <div class="weight-block">
+                        <span class="icon-weight icon"></span>
+                        <span>640 г</span>
+                    </div>
+                    <div class="clock-block icon">
+                        <span class="icon-clock icon"></span>
+                        <span>15 мин</span>
+                    </div>
+                    <div class="complexity-block">
+                        <span class="icon-star-full icon"></span>
+                        <span class="icon-star-empty icon"></span>
+                        <span class="icon-star-empty icon"></span>
+                        <span>очень просто</span>
+                    </div>
+                </div>
+                <div class="row description">
+                    <p>
+                        Приятный сюрприз! Легко и просто порадуйте любимого человека. Добавьте по вкусу чай, кофе, сок и т.д. :)
+                    </p>
+                </div>
+                <div class="row amount-and-price">
+                    <div class="price-count">
+                        <div class="price-wrapper"><span class="price-for-one">149</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                        <select>
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <div class="total-price-wrapper"> = <span class="total-price">149</span>Р</div>
+                    </div>
+                    <div class="btn add-to-cart">в корзину</div>
+                </div>
+            </div>
+            <div class="col-md-5 pL image-part">
+                <div class="image-wrapper">
+                    <img src="/img/snacks/toasts.jpg" alt="Сладкие тосты"/>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container product" style="margin-bottom:250px">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-1 pL pR">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1 class="item-name">
+                            Винная тарелка
+                        </h1>
+                    </div>
+                </div>
+                <div class="row property">
+                    <div class="weight-block">
+                        <span class="icon-weight icon"></span>
+                        <span>450 г</span>
+                    </div>
+                    <div class="clock-block icon">
+                        <span class="icon-clock icon"></span>
+                        <span>15 мин</span>
+                    </div>
+                    <div class="complexity-block">
+                        <span class="icon-star-full icon"></span>
+                        <span class="icon-star-empty icon"></span>
+                        <span class="icon-star-empty icon"></span>
+                        <span>очень просто</span>
+                    </div>
+                </div>
+                <div class="row description">
+                    <p>
+                        Широкая гамма вкусов, разнообразие текстур и оттенков — все, что нужно чтобы насладиться любимым вином.
+                    </p>
+                </div>
+                <div class="row amount-and-price">
+                    <div class="price-count">
+                        <div class="price-wrapper"><span class="price-for-one">349</span><span class="price-for-one-words">рублей<br>за порцию</span> &#215; </div>
+                        <select>
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <div class="total-price-wrapper"> = <span class="total-price">349</span>Р</div>
+                    </div>
+                    <div class="btn add-to-cart">в корзину</div>
+                </div>
+            </div>
+            <div class="col-md-5 pL image-part">
+                <div class="image-wrapper">
+                    <img src="/img/snacks/vine.jpg" alt="Винная тарелка"/>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>

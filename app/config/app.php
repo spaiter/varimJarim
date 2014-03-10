@@ -110,7 +110,8 @@ return array(
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
-        'Artdarek\OAuth\OAuthServiceProvider'
+        'Artdarek\OAuth\OAuthServiceProvider',
+        'Moltin\Cart\CartServiceProvider',
 
     ),
 
@@ -179,6 +180,7 @@ return array(
         'View'            => 'Illuminate\Support\Facades\View',
         'Image'           => 'Intervention\Image\Facades\Image',
         'OAuth'           => 'Artdarek\OAuth\Facade\OAuth',
+        'Cart'            => 'Moltin\Cart\Facade',
 
     ),
 

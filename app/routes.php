@@ -18,3 +18,7 @@ Route::controller('admin/products', 'ProductsController');
 Route::controller('admin/images', 'ImagesController');
 Route::controller('store', 'StoreController');
 Route::controller('user', 'UserController');
+Route::post( '/addtocart', array(
+    'as' => 'product.addtocart',
+    'uses' => 'StoreController@addtocart'
+) );

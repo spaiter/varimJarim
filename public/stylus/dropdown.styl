@@ -1,0 +1,111 @@
+.minict_wrapper {
+  background: $red;
+
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: -9px 10px 0 20px;
+
+  box-sizing: border-box;
+  cursor pointer
+  &:after {
+    font-family: 'varimJarim';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e60e";
+
+    display: block;
+    position: absolute;
+    height: 64px;
+    width: 14px;
+    top: 0;
+    right: 10px;
+    font-size: 18px;
+    line-height: 60px;
+    text-align: center;
+    color: $white !important;
+  }
+
+  &.active:after {
+
+    content: "\e60e";
+  }
+
+  input {
+    cursor pointer !important
+    padding-top 0
+    font-weight inherit
+    border: 0;
+    outline: none;
+    background: none;
+    color: $white !important;
+    height: 64px;
+    padding-left 14px
+    width: 100%;
+
+  }
+
+  ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    border: 1px solid $red;
+    left: 0;
+    overflow-y: auto;
+    z-index: 999999;
+
+    li {
+      color $red
+      list-style: none;
+      padding: 0 14px;
+      cursor: pointer;
+      background: #fff;
+      height: 64px;
+      line-height: 61px;
+
+      &:hover {
+        background: $red !important;
+        color: $white !important;
+      }
+
+      &.minict_group {
+        color: $red;
+        background: #fff !important;
+        font-weight: bold;
+        cursor: default;
+      }
+
+      &.minict_empty {
+        display: none;
+        background: #fff !important;
+        color:   #fff !important;
+        text-align: center;
+        font-size: 0.9rem;
+        height: 3.5rem;
+        line-height: 3.3rem;
+      }
+
+      &.selected {
+        color: $red;
+        background: $white;
+      }
+
+      &.highlighted {
+        color: $white !important;
+        background: $red;
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}

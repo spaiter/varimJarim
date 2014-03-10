@@ -1,0 +1,29 @@
+.help-inline.nod_msg {
+  top: 0;
+  right: 25px;
+  position: absolute;
+  display: block;
+}
+.help-inline.nod_msg::after {
+  font-family: 'varimJarim';
+  content: "\e610";
+/* Cross for error */
+}
+.control-group {
+  position: relative;
+}
+.padding-left .help-inline.nod_msg {
+  right: 12px;
+}
+.full-width .help-inline.nod_msg {
+  right: 12px;
+}
+.button.progress-button.disabled::after {
+  font-family: 'varimJarim';
+  content: "\e610";
+/* Cross for error */
+  top: 1px;
+  right: 12px;
+  display: block;
+  position: absolute;
+}

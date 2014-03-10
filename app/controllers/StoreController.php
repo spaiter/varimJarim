@@ -3,25 +3,83 @@
 class StoreController extends BaseController {
 
     public function __construct() {
-        //parent::__construct();
+        parent::__construct();
         $this->beforeFilter('csrf', array('on'=>'post'));
     }
 
+    /*
     public function getIndex() {
-        return View::make('hello');
+
+        $products = array();
+        $images = array();
+        $difficulty = array();
+        $categories = Category::all()->sortBy('order');
+
+        foreach ($categories as $category) {
+            $products[$category->id] = $category->products->sortBy('order');
+            foreach ($products[$category->id] as $product) {
+                $images[$product->id] = $product->images->first();
+                $difficulty[$product->id] = $product->difficulty;
+            }
+        }
+
 
         return View::make('store.index')
-            ->with('products', Product::take(4)->orderBy('created_at', 'DESC')->get());
+            ->with('categories', $categories)
+            ->with('products', $products)
+            ->with('images', $images)
+            ->with('difficulty', $difficulty);
     }
+    */
+    public function getIndex() {
+
+        $products = array();
+        $images = array();
+        $difficulty = array();
+        $category = Category::first();
+
+
+        $products[$category->id] = $category->products->sortBy('order');
+        foreach ($products[$category->id] as $product) {
+            $images[$product->id] = $product->images->first();
+            $difficulty[$product->id] = $product->difficulty;
+        }
+
+
+        var_dump(Cart::contents());
+
+        return View::make('store.index')
+            ->with('category', $category)
+            ->with('products', $products)
+            ->with('images', $images)
+            ->with('difficulty', $difficulty);
+    }
+
 
     public function getView($id) {
         return View::make('store.view')->with('product', Product::find($id));
     }
 
-    public function getCategory($cat_id) {
-        return View::make('store.category')
-            ->with('products', Product::where('category_id', '=', $cat_id)->paginate(6))
-            ->with('category', Category::find($cat_id));
+    public function getCategory($id) {
+
+        $products = array();
+        $images = array();
+        $difficulty = array();
+        $category = Category::find($id);
+
+
+        $products[$category->id] = $category->products->sortBy('order');
+        foreach ($products[$category->id] as $product) {
+            $images[$product->id] = $product->images->first();
+            $difficulty[$product->id] = $product->difficulty;
+        }
+
+
+        return View::make('store.index')
+            ->with('category', $category)
+            ->with('products', $products)
+            ->with('images', $images)
+            ->with('difficulty', $difficulty);
     }
 
     public function getSearch() {
@@ -33,18 +91,20 @@ class StoreController extends BaseController {
     }
 
     public function postAddtocart() {
-        $product = Product::find(Input::get('id'));
-        $quantity = Input::get('quantity');
 
-        Cart::insert(array(
-            'id'=>$product->id,
-            'name'=>$product->title,
-            'price'=>$product->price,
-            'quantity'=>$quantity,
-            'image'=>$product->image
-        ));
 
-        return Redirect::to('store/cart');
+            $product = Product::find(Input::get('id'));
+
+            Cart::insert(array(
+                'id'=>$product->id,
+                'name'=>$product->name,
+                'price'=>$product->price,
+                'weight'=>$product->weight,
+                'image'=>$product->image
+            ));
+        return Response::json( Cart::contents());
+
+
     }
 
     public function getCart() {
@@ -60,4 +120,6 @@ class StoreController extends BaseController {
     public function getContact() {
         return View::make('store.contact');
     }
+
+
 }

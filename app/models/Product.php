@@ -39,6 +39,10 @@ class Product extends Eloquent {
         return $this->belongsTo('Category');
     }
 
+    public function difficulty() {
+        return $this->hasOne('Difficulty', 'id', 'difficulty_id');
+    }
+
     public function images() {
         return $this->hasMany('Images', 'product_id' ,'image_id');
     }
