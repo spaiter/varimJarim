@@ -319,22 +319,25 @@ $(document).ready(function(){
 
     $('.button.progress-button').attr('disabled','disabled'); //Делаем кнопку отправки неактивной в самом начале
 
-    var metrics = [
-        [ '#name', 'presence', '' ],
-        [ '#data', 'presence', '' ],
-        [ '#adress', 'presence', '' ],
-        [ '#phone', 'presence', '' ],
-        [ '#email', 'presence', '' ],
-        [ '#email', 'email', '' ]
-    ];
-    var options = {
-        'delay' : 200,
-        'submitBtnSelector' : '.button.progress-button',
-        'silentSubmit' : true
-    };
-    jQuery(".order-form").nod(metrics,options);
+    var $orderForm = $(".order-form");
+    if ($orderForm.length) {
+        var metrics = [
+            [ '#name', 'presence', '' ],
+            [ '#data', 'presence', '' ],
+            [ '#adress', 'presence', '' ],
+            [ '#phone', 'presence', '' ],
+            [ '#email', 'presence', '' ],
+            [ '#email', 'email', '' ]
+        ];
+        var options = {
+            'delay' : 200,
+            'submitBtnSelector' : '.button.progress-button',
+            'silentSubmit' : true
+        };
+        $orderForm.nod(metrics,options);
+        $orderForm.on('silentSubmit', submitFn );
+    }
 
-    $('.order-form').on('silentSubmit', submitFn );
 }); // Активация валидации
 
 
@@ -417,13 +420,3 @@ $(document).ready(function(){
         $recipeText.slideToggle();
     });
 });
-
-$(document).ready(function(){
-    var $multiSelect = $('.multiSelect');
-    if ($multiSelect.length) {
-        $multiSelect.multiselect({
-            enableFiltering: true
-        })
-    }
-});
-
