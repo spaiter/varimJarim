@@ -109,9 +109,8 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Intervention\Image\ImageServiceProvider',
-        'Barryvdh\Debugbar\ServiceProvider',
         'Artdarek\OAuth\OAuthServiceProvider',
-        'Moltin\Cart\CartServiceProvider',
+        'Gloudemans\Shoppingcart\ShoppingcartServiceProvider'
 
     ),
 
@@ -180,7 +179,7 @@ return array(
         'View'            => 'Illuminate\Support\Facades\View',
         'Image'           => 'Intervention\Image\Facades\Image',
         'OAuth'           => 'Artdarek\OAuth\Facade\OAuth',
-        'Cart'            => 'Moltin\Cart\Facade',
+        'Cart'            => 'Gloudemans\Shoppingcart\Facades\Cart',
 
     ),
 

@@ -16,9 +16,6 @@ Route::get('/', array('uses'=>'StoreController@getIndex'));
 Route::controller('admin/categories', 'CategoriesController');
 Route::controller('admin/products', 'ProductsController');
 Route::controller('admin/images', 'ImagesController');
+Route::controller('admin/ingredients', 'IngredientsController');
 Route::controller('store', 'StoreController');
 Route::controller('user', 'UserController');
-Route::post( '/addtocart', array(
-    'as' => 'product.addtocart',
-    'uses' => 'StoreController@addtocart'
-) );

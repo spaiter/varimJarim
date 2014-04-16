@@ -32,7 +32,6 @@ class Product extends Eloquent {
         'order'             =>  'integer',
         'tag_id'            =>  'integer',
         'difficulty_id'     =>  'integer'
-
     );
 
     public function category() {

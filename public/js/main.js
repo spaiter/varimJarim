@@ -20,7 +20,7 @@ $(function(){
     });
 }); //datePicker activation
 
-$(document).mouseup(function (e) {
+$(document).mouseup(function(e) {
     var datePicker = $(".datepicker"),
         orderBody = $('.order-body-wrapper');
     if (datePicker.css('display')=='inline-block') {
@@ -66,6 +66,7 @@ $(function(){
         remove,
         amountAndPriceWrapper,
         itemName,
+        itemId,
         priceForOne,
         totalPrice,
         oneItemAmount,
@@ -77,16 +78,96 @@ $(function(){
         i,
         orderWrapper = $('.order-wrapper');
 
+    remove = orderListWrapper.find('.remove');
+
+    function getOrderAmountWord(amount) {
+        switch (amount) {
+            case 1:
+                orderAmountWord = 'рецепт';
+                break;
+            case 2:
+                orderAmountWord = 'рецепта';
+                break;
+            case 3:
+                orderAmountWord = 'рецепта';
+                break;
+            case 4:
+                orderAmountWord = 'рецепта';
+                break;
+            case 21:
+                orderAmountWord = 'рецепт';
+                break;
+            default:
+                orderAmountWord = 'рецептов';
+                break;
+        }
+        return orderAmountWord
+    } // Склонения для слова рецепт
+
+    function countTotal(amount) {
+        inTotal = 0;
+        for(i = 0; i < amount; i++) {
+            inTotal += +orderListWrapper.find('dl').eq(i).find('.total-price').html();
+        } // подсчет общей суммы
+        inTotalWrapper.html(inTotal);
+    }
+
+    function removeItem(item) {
+        item.remove();
+        var itemId = item.find('.itemId').val();
+        console.log(itemId);
+        $.ajax({
+            data : {
+                "id": itemId,
+                "smthing": 'test'
+            },
+            type : "GET",
+            url : "/store/removeitem",
+            dataType: 'JSON',
+            success : function(response) {
+                console.log(response)
+            }
+        });
+        orderAmount = orderListWrapper.find('dl').length;
+        orderButton.find('.recipe-amount').html(orderAmount);
+        getOrderAmountWord(orderAmount);
+        orderButton.find('.recipe-amount-word').html(orderAmountWord);
+        countTotal(orderAmount);
+        if (orderAmount==0) {
+            var wrapper = $('.order-wrapper');
+            wrapper.slideUp();
+            wrapper.children('.order-body-wrapper').removeClass('active').slideUp();
+        }
+    }
+
     addToCart.each(function(){
         var $this = $(this);
-        $this.click(function(e){
-            e.preventDefault();
+        $this.click(function(){
+
+            var $form =  $this.parent().parent().parent().parent();
+            $.ajax({
+                data : {
+                    "_token": $form.find( 'input[name=_token]' ).val(),
+                    "id": $form.find('input[name=id]').val(),
+                    "amount": $form.find('select[name=amount]').val()
+                },
+                type : "POST",
+                url : "/store/addtocart",
+                dataType: 'JSON',
+                success : function(answer) {
+                    console.log(answer)
+                }
+            });
+
+            /*
             window.location.hash = 'add';
             _gaq.push(['_trackPageview',location.pathname + location.search  + location.hash]);
             window.yaCounter23885122.hit(window.location.href);
+            */
             orderWrapper.show();
             amountAndPriceWrapper = $this.parent();
             itemName = amountAndPriceWrapper.parent().find('.item-name').html();
+            itemId = amountAndPriceWrapper.parent().find('.itemId').val();
             priceForOne = +amountAndPriceWrapper.find('.price-for-one').html();
             oneItemAmount = +amountAndPriceWrapper.find('.amount').val();
             totalPrice = priceForOne*oneItemAmount;
@@ -95,44 +176,33 @@ $(function(){
                 switch (amount) {
                     case 1:
                         declination = 'порция';
-                        break
+                        break;
                     case 2:
                         declination = 'порции';
-                        break
+                        break;
                     case 3:
                         declination = 'порции';
-                        break
+                        break;
                     case 4:
                         declination = 'порции';
-                        break
+                        break;
                     default:
                         declination = 'порций';
-                        break
+                        break;
                 }
                 return declination;
             } // Склонения для слова порция
+
             if (!orderAmount) {
-                addToOrderList(itemName,priceForOne,oneItemAmount,totalPrice,getDeclination(oneItemAmount));
+                addToOrderList(itemId,itemName,priceForOne,oneItemAmount,totalPrice,getDeclination(oneItemAmount));
             } else {
-                if(!checkForSame(itemName,orderAmount)) {
-                    addToOrderList(itemName,priceForOne,oneItemAmount,totalPrice,getDeclination(oneItemAmount));
+                if(!checkForSame(itemId,orderAmount)) {
+                    console.log(checkForSame(itemId,orderAmount));
+                    addToOrderList(itemId,itemName,priceForOne,oneItemAmount,totalPrice,getDeclination(oneItemAmount));
                 } else {
-                    updateAmountAndPrice(checkForSame(itemName,orderAmount)-1,oneItemAmount,priceForOne)
+                    updateAmountAndPrice(checkForSame(itemId,orderAmount)-1,oneItemAmount,priceForOne)
                 }
 
-                var $form =  $this.parent().parent().parent().parent();
-                $.ajax({
-                    data : {
-                        "_token": $form.find( 'input[name=_token]' ).val(),
-                        "id": $form.find('input[name=id]').val()
-                    },
-                    type : "POST",
-                    url : "/store/addtocart",
-                    dataType: 'JSON',
-                    success : function(answer) {
-                        console.log(answer)
-                    }
-                });
             }
 
             function showAddAnimation(btn) {
@@ -162,26 +232,27 @@ $(function(){
                     currentDeclinationWrapper = currentItemWrapper.find('.declination'),
                     currentTotalPrice = currentItemWrapper.find('.total-price'),
                     currentAmount = currentAmountWrapper.html(),
-                    countedAmount = +currentAmount+amount
+                    countedAmount = +currentAmount+amount;
                 currentAmountWrapper.html(countedAmount);
                 currentDeclinationWrapper.html(' '+getDeclination(countedAmount));
                 currentTotalPrice.html(countedAmount*price);
 
             }
 
-            function checkForSame(name,amount) {
+            function checkForSame(id,amount) {
                 for (i = 0; i < amount; i++) {
-                    if(orderListWrapper.find('.recipe-name').eq(i).html()==name) {
+                    if(orderListWrapper.find('.itemId').eq(i).val()==id) {
                         return(i+1);
                     }
                 }
                 return(false);
             }
 
-            function addToOrderList(name,price,amount,totalprice,declination) {
+            function addToOrderList(id,name,price,amount,totalprice,declination) {
                 orderListWrapper.append('<dl>' +
                     '<dt>' +
                     '<span class="recipe-name">'+name+'</span>' +
+                    '<input class="itemId" name="id" type="hidden" value="'+id+'">' +
                     '</dt>' +
                     '<dd>' +
                     '<span class="count">'+amount+'</span>' +
@@ -200,39 +271,9 @@ $(function(){
                 return orderAmount;
             }
 
-            function countTotal(amount) {
-                inTotal = 0;
-                for(i = 0; i < amount; i++) {
-                    inTotal += +orderListWrapper.find('dl').eq(i).find('.total-price').html();
-                } // подсчет общей суммы
-                inTotalWrapper.html(inTotal);
-            }
+
 
             countTotal(orderAmount);
-
-            function getOrderAmountWord(amount) {
-                switch (amount) {
-                    case 1:
-                        orderAmountWord = 'рецепт';
-                        break
-                    case 2:
-                        orderAmountWord = 'рецепта';
-                        break
-                    case 3:
-                        orderAmountWord = 'рецепта';
-                        break
-                    case 4:
-                        orderAmountWord = 'рецепта';
-                        break
-                    case 21:
-                        orderAmountWord = 'рецепт';
-                        break
-                    default:
-                        orderAmountWord = 'рецептов';
-                        break
-                }
-                return orderAmountWord
-            } // Склонения для слова рецепт
 
             getOrderAmountWord(orderAmount);
 
@@ -241,27 +282,19 @@ $(function(){
                 $(this).next().next().show();
                 })}
             orderButton.find('.recipe-amount').html(orderAmount);
-            orderButton.find('.recipe-amount-word').html(orderAmountWord)
+            orderButton.find('.recipe-amount-word').html(orderAmountWord);
 
             remove = orderListWrapper.find('.remove');
-            remove.each(function(){
-                var thisItem = $(this).parent();
-                $(this).click(function(){
-                    thisItem.remove();
-                    orderAmount = orderListWrapper.find('dl').length;
-                    orderButton.find('.recipe-amount').html(orderAmount);
-                    getOrderAmountWord(orderAmount);
-                    orderButton.find('.recipe-amount-word').html(orderAmountWord)
-                    countTotal(orderAmount);
-                    if (orderAmount==0) {
-                        var wrapper = $('.order-wrapper');
-                        wrapper.slideUp();
-                        wrapper.children('.order-body-wrapper').removeClass('active').slideUp();
-                    }
-                })
+
+            remove.click(function(){
+                removeItem($(this).parent());
             })
         })
     });
+
+    remove.click(function(){
+        removeItem($(this).parent());
+    })
 }); //Действия по нажатию кнопки добавить
 
 
@@ -281,21 +314,6 @@ $(function(){
         }
     } );
 } ); // активация кнопки прогресса заказа
-
-
-$(document).ready(function(){
-    $('.bxslider').bxSlider({
-        pagerCustom: 'ul.menu',
-        controls: false,
-        slideSelector: 'div.slide',
-        easing: 'ease-out',
-        adaptiveHeight: true,
-        preloadImages: 'all',
-        startSlide: 0,
-        touchEnabled: false
-    });
-}); //Активация слайдера
-
 
 $(document).ready(function(){
 
@@ -341,9 +359,11 @@ var submitFn = function(){
         orderListLength = orderListWrapperDl.length,
         i, recipeName, amount;
 
+    /*
     window.location.hash = 'ordered';
     _gaq.push(['_trackPageview',location.pathname + location.search  + location.hash]);
     window.yaCounter23885122.hit(window.location.href);
+    */
 
     for (i=0; i < orderListLength; i++) {
         recipeName = orderListWrapperDl.eq(i).find('.recipe-name').html();
@@ -384,8 +404,26 @@ var submitFn = function(){
 
 $('#phone').mask("9 - (999) - 999 - 9999"); //Ставим маску на телефон
 
-$(window).hashchange( function(){
-    _gaq.push(['_trackPageview',location.pathname + location.search  + location.hash]);
-    window.yaCounter23885122.hit(window.location.href);
-    console.log('test');
+//Спойлер рецепта
+
+$(document).ready(function(){
+   var $recipeName = $('.recipeName'),
+       $spoiler = $('.spoiler'),
+       $recipeText = $('.recipeText');
+    $recipeName.click(function(){
+        $recipeText.slideToggle();
+    });
+    $spoiler.click(function(){
+        $recipeText.slideToggle();
+    });
 });
+
+$(document).ready(function(){
+    var $multiSelect = $('.multiSelect');
+    if ($multiSelect.length) {
+        $multiSelect.multiselect({
+            enableFiltering: true
+        })
+    }
+});
+

@@ -3,8 +3,12 @@
 class BaseController extends Controller {
 
 	public function __construct() {
+
 		$this->beforeFilter(function() {
 			View::share('categories', Category::all()->sortBy('order'));
+            View::share('CartItemsCount', Cart::count(false));
+            View::share('CartItems', Cart::content());
+            View::share('CartTotal', Cart::total());
 		});
 	}
 

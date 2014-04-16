@@ -4,15 +4,15 @@
 
 		@foreach($products[$category->id] as $product)
 			<div class="container product">
-			{{ Form::open(array('method' => 'POST', 'route' => 'product.addtocart', 'class'=>'ajax' )) }}
+			{{ Form::open(array('url' => 'store/addtocart', 'method' => 'POST',  'class'=>'ajax' )) }}
 		    <div class="row">
 		        <div class="col-md-6 col-md-offset-1 pL pR">
 		            <div class="row">
 		                <div class="col-xs-12">
 		                    <h1 class="item-name">
-		                        {{ $product->name }}
-		                        {{ Form::hidden('id', $product->id) }}
+		                        {{ HTML::link('store/view/'.$product->id, $product->name) }}
 		                    </h1>
+		                    {{ Form::hidden('id', $product->id, array('class'=>'itemId')) }}
 		                </div>
 		            </div>
 		            <div class="row property">
@@ -49,7 +49,7 @@
 		                    </select>
 		                    <div class="total-price-wrapper"> = <span class="total-price">258</span>Р</div>
 		                </div>
-		                {{ Form::submit('в корзину', array('class' => 'btn add-to-cart')); }}
+		                {{ Form::button('в корзину', array('class' => 'btn add-to-cart')); }}
 		            </div>
 		        </div>
 		        <div class="col-md-5 pL image-part">

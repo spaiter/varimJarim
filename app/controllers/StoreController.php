@@ -38,15 +38,11 @@ class StoreController extends BaseController {
         $difficulty = array();
         $category = Category::first();
 
-
         $products[$category->id] = $category->products->sortBy('order');
         foreach ($products[$category->id] as $product) {
             $images[$product->id] = $product->images->first();
             $difficulty[$product->id] = $product->difficulty;
         }
-
-
-        var_dump(Cart::contents());
 
         return View::make('store.index')
             ->with('category', $category)
@@ -57,7 +53,16 @@ class StoreController extends BaseController {
 
 
     public function getView($id) {
-        return View::make('store.view')->with('product', Product::find($id));
+
+        $product = Product::find($id);
+        $images = $product->images;
+        $difficulty = $product->difficulty;
+
+        return View::make('store.view')
+            ->with('product', $product)
+            ->with('images', $images)
+            ->with('difficulty', $difficulty);
+
     }
 
     public function getCategory($id) {
@@ -92,34 +97,39 @@ class StoreController extends BaseController {
 
     public function postAddtocart() {
 
-
-            $product = Product::find(Input::get('id'));
-
-            Cart::insert(array(
-                'id'=>$product->id,
-                'name'=>$product->name,
-                'price'=>$product->price,
-                'weight'=>$product->weight,
-                'image'=>$product->image
+        $product = Product::find(Input::get('id'));
+        $exist = Cart::search(array('id' => $product->id));
+        if ($exist) {
+            $item = Cart::get($exist[0]);
+            $qty = $item->qty;
+            $newQty = $qty+Input::get('amount');
+            $item->qty = $newQty;
+            return Response::json($item);
+        } else {
+            Cart::add(array(
+                'id' => $product->id,
+                'name' => $product->name,
+                'qty' => Input::get('amount'),
+                'price' => $product->price,
             ));
-        return Response::json( Cart::contents());
+            return Response::json(Cart::content());
+        }
+
+    }
 
 
+
+    public function getRemoveitem() {
+        $rowId = Cart::search(array('id' => (int)Input::get('id')))[0];
+        if ($rowId) {
+            Cart::remove($rowId);
+            return Response::json(['id'=>Input::get('id').' removed']);
+        } else {
+            return Response::json(['error'=>'no such item']);
+        }
     }
 
     public function getCart() {
         return View::make('store.cart')->with('products', Cart::contents());
     }
-
-    public function getRemoveitem($identifier) {
-        $item = Cart::item($identifier);
-        $item->remove();
-        return Redirect::to('store/cart');
-    }
-
-    public function getContact() {
-        return View::make('store.contact');
-    }
-
-
 }

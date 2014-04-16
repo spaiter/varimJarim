@@ -10,8 +10,7 @@
         "intervention/image": "dev-master",
         "barryvdh/laravel-debugbar": "1.*",
         "artdarek/oauth-4-laravel": "dev-master",
-        "moltin/laravel-cart": "dev-master"
-
+        "gloudemans/shoppingcart": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

@@ -79,6 +79,10 @@
 			{{ Form::submit('Add Images To Product', array('class'=>'btn')) }}
 		{{ Form::close() }}
 		</p>
+		<h2>Инредиенты</h2>
+		<p>
+			{{ Form::select('ingredients', $ingredients, array('class'=>'multiSelect'))}}
+		</p>
 		
 	</div><!-- end admin -->
 

@@ -47,16 +47,12 @@
     </div>
 </footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+{{ HTML::script('js/vendor/jquery-2.1.0.min.js'); }}
+{{ HTML::script('js/vendor/bootstrap.min.js'); }}
+{{ HTML::script('js/vendor/bootstrap-multiselect.js'); }}
+{{ HTML::script('js/plugins.js'); }}
+{{ HTML::script('js/main.js'); }}
 
-
-<script>
-    $(document).ready(function(){
-        var $day_in_past = $('.day_in_past');
-        $day_in_past.unbind('click');
-    });
-</script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script type="text/javascript">
@@ -70,10 +66,7 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-
 </script>
-
-
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
@@ -101,7 +94,5 @@
 </script>
 <noscript><div><img src="//mc.yandex.ru/watch/23885122" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
 </body>
 </html>

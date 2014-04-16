@@ -78,3 +78,32 @@ strong, b
   opacity: 1
   color:    $white
 }
+
+// Генерим падинги и маргины
+for $i in (0..10) {
+  $value = ($i*5)
+  .pL{$value} {
+    padding-left ($value)px
+  }
+  .pR{$value} {
+    padding-right ($value)px
+  }
+  .pT{$value} {
+    padding-top ($value)px
+  }
+  .pB{$value} {
+    padding-bottom ($value)px
+  }
+  .mL{$value} {
+    margin-left ($value)px
+  }
+  .mR{$value} {
+    margin-right ($value)px
+  }
+  .mT{$value} {
+    margin-top ($value)px
+  }
+  .mB{$value} {
+    margin-bottom ($value)px
+  }
+}

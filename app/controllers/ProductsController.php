@@ -175,6 +175,8 @@ class ProductsController extends BaseController {
         $difficultys = array();
         $tags = array();
 
+        $ingredients = Ingredient::all()->lists('name','id');
+
         foreach(Category::all() as $category) {
             $categories[$category->id] = $category->name;
         }
@@ -191,7 +193,8 @@ class ProductsController extends BaseController {
                 ->with('categories', $categories)
                 ->with('difficultys', $difficultys)
                 ->with('tags', $tags)
-                ->with('images', $product->images);
+                ->with('images', $product->images)
+                ->with('ingredients', $ingredients);
         }
 
         return Redirect::to('admin/products/index')

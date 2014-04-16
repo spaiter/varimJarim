@@ -44,9 +44,6 @@
                         </p>
                     </div>
                 </div>
-                <div class="header-image-wrapper">
-                	{{ HTML::image('img/header-food.jpg')}}
-                </div>
                 <div class="order-wrapper" <?php if ($CartItemsCount >= 1) {echo "style=\"display:block !important;\"";}?>>
                     <div class="order-button-wrapper" <?php if ($CartItemsCount >= 1) {echo "style=\"display:block !important;\"";}?>>
                         <span class="recipe-amount">{{ $CartItemsCount }}</span>
@@ -148,55 +145,6 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7 col-md-offset-1 pL">
-                <p class="intro-text">
-                    Пермский food-проект &laquo;Варим-жарим&raquo; делает приготовление домашней еды еще более <strong>удобным</strong>! Наша служба доставки <strong>привезет</strong> Вам домой <strong>набор продуктов</strong> и <strong>фото-рецепты</strong> для приготовления вкуснейших блюд, созданных профессиональным шеф-поваром.<br />
-                    Готовьте с&nbsp;удовольствием!
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-11 col-md-offset-1 pL feature-block">
-                <div class="cart-block">
-                    <span class="icon-cart icon"></span>
-                    <span>рецепт<br />собран</span>
-                </div>
-                <div class="clock-block">
-                    <span class="icon-clock icon"></span>
-                    <span>готовится<br />быстро</span>
-                </div>
-                <div class="pan-block">
-                    <span class="icon-pan icon flat"></span>
-                    <span>минимум<br />посуды</span>
-                </div>
-                <div class="instruction-block">
-                    <span class="icon-instruction icon"></span>
-                    <span>понятная<br />инструкция</span>
-                </div>
-                <div class="deliver-block">
-                    <span class="icon-deliverycar icon flat"></span>
-                    <span>доставка<br />на завтра</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="raw">
-            <div>
-                <ul class="menu">
-                    <?php $i=0; ?>
-                    @foreach($categories as $menuItem)
-                        <a href="/store/category/{{ $menuItem->id }}"><li class="col-md-2 <?php if ($i==0) {echo "col-md-offset-1";} ;?>"><span<?php if ($category->id == $menuItem->id) {echo " class=\"active\"";} ?>>{{$menuItem->name}}</span></li></a>
-                        <?php $i++; ?>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </div>
 </header>
 <div class="container">
     <div class="line"></div>
@@ -221,7 +169,7 @@
                 <a href="personal.html">Обработка персональных данных</a>
             </div>
             <div class="col-md-4 developer-wrapper">
-                <a href="http://da-group.ru/">Разработка сайта</a> — дизайн-студия «ДА!», 2013
+                <a href="http://da-group.ru/">Разработка сайта</a> — дизайн-студия «ДА!», 2014
             </div>
         </div>
     </div>
@@ -231,14 +179,18 @@
 
 
 
-{{ HTML::script('js/vendor/jquery-2.1.0.min.js'); }}
-{{ HTML::script('js/vendor/bootstrap.min.js'); }}
-{{ HTML::script('js/vendor/bootstrap-multiselect.js'); }}
-{{ HTML::script('js/plugins.js'); }}
-{{ HTML::script('js/main.js'); }}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<!--
+{{ HTML::script('js/underscore-min.js'); }}
+{{ HTML::script('js/backbone-min.js'); }}
+{{ HTML::script('js/app.js'); }}
+-->
 
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 
 <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -251,7 +203,9 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 </script>
-<!-- Yandex.Metrika counter -->
+-->
+
+<!-- Yandex.Metrika counter 
 <script type="text/javascript">
     (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
@@ -277,6 +231,17 @@
     })(document, window, "yandex_metrika_callbacks");
 </script>
 <noscript><div><img src="//mc.yandex.ru/watch/23885122" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+-->
 <!-- /Yandex.Metrika counter -->
+
+{{ HTML::script('js/plugins.js'); }}
+{{ HTML::script('js/main.js'); }}
+<!--
+{{ HTML::script('js/vendor/fotorama.js'); }}
+-->
+<script src="//fotorama.s3.amazonaws.com/4.5.0/fotorama.js"></script>
+
+
+
 </body>
 </html>
